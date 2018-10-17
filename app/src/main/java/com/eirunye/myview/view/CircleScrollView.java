@@ -115,6 +115,6 @@ public class CircleScrollView extends View {
 
     public void cancelAnimations() {
 
-        valueAnimator.cancel();
+        if (valueAnimator != null) valueAnimator.cancel();
     }
 }
