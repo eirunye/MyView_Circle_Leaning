@@ -25,6 +25,7 @@ public class CircleView extends View {
     private int angleSpeed = 10;
     Shader shader;
     RectF rectF;
+    RectF rectF1;
     Matrix matrix;
 
     public CircleView(Context context) {
@@ -43,6 +44,7 @@ public class CircleView extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(Color.BLUE);
         rectF = new RectF(200, 200, 400, 400);
+        rectF1 = new RectF(500, 500, 700, 700);
 
         shader = new SweepGradient(300, 300, changeColors, null);
         matrix = new Matrix();
@@ -69,6 +71,10 @@ public class CircleView extends View {
 
         paint.setColor(Color.GREEN);
         canvas.drawCircle(300, 800, 100, paint);
+
+
+        paint.setColor(Color.YELLOW);
+        canvas.drawArc(rectF1, 0, 360, false, paint);
 
 
 

@@ -1,5 +1,6 @@
 package com.eirunye.myview.view;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -32,6 +33,9 @@ public class CircleScrollView extends View {
             Color.argb(30, 0, 0, 233),
             Color.argb(255, 0, 0, 233),
     };
+    private float cx;
+    private float cy;
+    private ValueAnimator valueAnimator;
 
     public CircleScrollView(Context context) {
         this(context, null);
@@ -77,18 +81,40 @@ public class CircleScrollView extends View {
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(Color.argb(255, 0, 0, 233));
 
-        float cx = 300 + (int) (100 * Math.cos((double) sAngle / 180 * Math.PI));
-        float cy = 300 + (int) (100 * Math.sin((double) sAngle / 180 * Math.PI));
+        cx = 300 + (int) (100 * Math.cos((double) sAngle / 180 * Math.PI));
+        cy = 300 + (int) (100 * Math.sin((double) sAngle / 180 * Math.PI));
         canvas.drawCircle(cx, cy, 30 / 2, paint);
 
-        sAngle += sSpeed;
-        if (sAngle == 360)
-            sAngle = 0;
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        //滚动
+//        sAngle += sSpeed;
+//        if (sAngle == 360)
+//            sAngle = 0;
+//        try {
+//            Thread.sleep(10);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        invalidate();
+    }
+
+    //或者下面动画滚动
+    public void startAnimations() {
+
+        valueAnimator = ValueAnimator.ofInt(0, sAngle);
+        valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
+        valueAnimator.setDuration(1000);
+        valueAnimator.addUpdateListener(this::onAnimation);
+        valueAnimator.start();
+    }
+
+    private void onAnimation(ValueAnimator valueAnimator) {
+
+        sAngle = Integer.valueOf(String.valueOf(valueAnimator.getAnimatedValue()));
         invalidate();
+    }
+
+    public void cancelAnimations() {
+
+        valueAnimator.cancel();
     }
 }
