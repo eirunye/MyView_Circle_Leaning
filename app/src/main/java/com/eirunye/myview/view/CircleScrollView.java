@@ -86,15 +86,15 @@ public class CircleScrollView extends View {
         canvas.drawCircle(cx, cy, 30 / 2, paint);
 
         //滚动
-//        sAngle += sSpeed;
-//        if (sAngle == 360)
-//            sAngle = 0;
-//        try {
-//            Thread.sleep(10);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        invalidate();
+        sAngle += sSpeed;
+        if (sAngle == 360)
+            sAngle = 0;
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        invalidate();
     }
 
     //或者下面动画滚动
