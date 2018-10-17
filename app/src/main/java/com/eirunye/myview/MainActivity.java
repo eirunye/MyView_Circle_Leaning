@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private void circleScrollView() {
         circleView = new CircleScrollView(this);
         frameLayout.addView(circleView);
-        circleView.startAnimations();
+//        circleView.startAnimations();
         circleView.setOnClickListener(this::onClickView);
     }
 
