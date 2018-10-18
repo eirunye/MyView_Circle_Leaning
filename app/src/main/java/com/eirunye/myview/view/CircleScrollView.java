@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.SweepGradient;
@@ -48,6 +49,7 @@ public class CircleScrollView extends View {
     public CircleScrollView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
+        setLayerType(LAYER_TYPE_SOFTWARE,null);
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setStrokeWidth(30);
@@ -57,6 +59,8 @@ public class CircleScrollView extends View {
 
         shader = new SweepGradient(300, 300, colors, null);
         matrix = new Matrix();
+
+        Rect rect = new Rect();
     }
 
 
@@ -84,6 +88,7 @@ public class CircleScrollView extends View {
         cx = 300 + (int) (100 * Math.cos((double) sAngle / 180 * Math.PI));
         cy = 300 + (int) (100 * Math.sin((double) sAngle / 180 * Math.PI));
         canvas.drawCircle(cx, cy, 30 / 2, paint);
+
 
         //滚动
         sAngle += sSpeed;

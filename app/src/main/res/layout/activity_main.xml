@@ -12,11 +12,16 @@
         android:layout_height="400dp"
         android:layout_gravity="center">
 
+        <com.eirunye.myview.view.XfermodeView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
         <com.eirunye.myview.view.MyCircleView
             android:id="@+id/myCircleView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             eirunye:inner_circle_radius="200"
+            android:visibility="gone"
             eirunye:max_value="100"
             eirunye:num_value="10"
             eirunye:ring_size="60" />
