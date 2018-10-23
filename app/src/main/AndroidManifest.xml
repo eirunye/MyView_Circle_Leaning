@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MyRoundViewActivity" />
+        <activity android:name=".CircleViewActivity" />
+        <activity android:name=".CircleScrollViewActivity" />
+        <activity android:name=".MyCircleViewActivity"></activity>
     </application>
 
 </manifest>

@@ -1,48 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:eirunye="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        android:layout_gravity="center">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
 
-        <com.eirunye.myview.view.XfermodeView
-            android:layout_width="wrap_content"
-            android:visibility="gone"
+        <Button
+            android:id="@+id/myRoundView"
+            android:text="MyRoundView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
-        <com.eirunye.myview.view.MyCircleView
+        <Button
             android:id="@+id/myCircleView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            eirunye:inner_circle_radius="200"
-            eirunye:max_value="100"
-            eirunye:num_value="10"
-            eirunye:ring_size="60" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="40dp"
-            android:text="数据改变"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="0"
-            android:textColor="#fff00000"
-            android:textSize="25sp" />
-    </FrameLayout>
+            android:text="MyCircleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/circleScrollView"
+            android:text="CircleScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/circleView"
+            android:text="CircleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
