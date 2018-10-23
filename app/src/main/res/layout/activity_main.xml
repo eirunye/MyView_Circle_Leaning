@@ -14,6 +14,7 @@
 
         <com.eirunye.myview.view.XfermodeView
             android:layout_width="wrap_content"
+            android:visibility="gone"
             android:layout_height="wrap_content" />
 
         <com.eirunye.myview.view.MyCircleView
@@ -21,7 +22,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             eirunye:inner_circle_radius="200"
-            android:visibility="gone"
             eirunye:max_value="100"
             eirunye:num_value="10"
             eirunye:ring_size="60" />

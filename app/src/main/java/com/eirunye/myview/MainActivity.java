@@ -3,6 +3,7 @@ package com.eirunye.myview;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private MyCircleView myCircleView;
     private CircleScrollView circleView;
+
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
